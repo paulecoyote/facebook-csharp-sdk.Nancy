@@ -1,6 +1,6 @@
 [submodule "dependencies/facebook-csharp-sdk"]
 	path = dependencies/facebook-csharp-sdk
-	url = git://github.com/facebook-csharp-sdk/facebook-csharp-sdk.git
+	url = git://github.com/PaulECoyote/facebook-csharp-sdk.git
 [submodule "dependencies/Nancy"]
 	path = dependencies/Nancy
-	url = git://github.com/NancyFx/Nancy.git
+	url = git://github.com/PaulECoyote/Nancy.git
