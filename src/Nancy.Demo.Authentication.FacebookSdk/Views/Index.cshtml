@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Samples ASP.NET MVC Canvas App using Facebook C# SDK</h2>
+
+@if (ViewBag.perms == null) {
+    <h2>:(</h2>
+    <div>
+       Oops! I don't know how you are. You will need to login to access the app. <a href="@ViewBag.fbLoginUrl.AbsoluteUri" target="_top">Click here to login</a>.
+    </div>
+}
+else
+{
+    <h2>Hi @ViewBag.name</h2> 
+    <img src="@ViewBag.picture" alt="@ViewBag.name"/> <br />
+    
+    <h3>My Feeds</h3>
+    if(ViewBag.feed == null) {
+        <h2>:(</h2>
+        <div>Oops! I can't access your feeds. <a href="@ViewBag.fbLoginUrl.AbsoluteUri" target="_top">Click here to grant access to the app</a>.</div>
+    }
+    else {
+      @Html.Partial("_Feeds", (object)ViewBag.feed.data)
+    }
+}

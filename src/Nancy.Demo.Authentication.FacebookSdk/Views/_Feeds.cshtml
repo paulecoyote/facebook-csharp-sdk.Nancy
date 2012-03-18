@@ -1,0 +1,25 @@
+﻿@model dynamic
+           
+<table style="border: 0">
+    @foreach (var feed in Model)
+    {
+        <tr>
+            <td>
+                <a href="https://facebook.com/@feed.from.id" target="_blank" title="@feed.from.name">
+                    <img src="@(Request.Url.Scheme)://graph.facebook.com/@feed.from.id/picture" alt="@feed.from.name"/>
+                </a>
+            </td>
+            <td>
+                @if (feed.ContainsKey("message")) {
+                    <p>@feed.message</p>
+                }
+                @if (feed.ContainsKey("link")) {
+                    <p><a href="@feed.link" target="_top">@feed.link</a></p>
+                }
+                @if (feed.ContainsKey("story")) {
+                    <p>@feed.story</p>
+                }
+            </td>
+        </tr>
+    }
+</table>
